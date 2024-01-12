@@ -1,0 +1,283 @@
+/* Feedback-Details */
+
+.container-list {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 94px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.go-back {
+  display: flex;
+  align-items: center;
+}
+
+.go-back-button {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #647196;
+  border: none;
+  background: none;
+  margin-right: 512px;
+  padding-left: 15px;
+  width: 76px;
+  cursor: pointer;
+}
+
+.go-back-button:hover {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration-line: underline;
+  color: #647196;
+}
+
+.edit-feedback-button {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: #f2f4fe;
+  border: none;
+  background: #4661e6;
+  border-radius: 10px;
+  width: 142px;
+  height: 44px;
+  cursor: pointer;
+}
+
+.edit-feedback-button:hover {
+  background: #7c91f9;
+  border-radius: 10px;
+}
+
+.feedback {
+  background: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  background: #f2f4fe;
+  border-radius: 10px;
+}
+
+.arrow-up {
+  left: 13px;
+  top: 10px;
+}
+
+.progress span {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: -0.180556px;
+  color: #3a4374;
+  padding-bottom: 8px;
+  padding-top: 24px;
+  padding-right: 11px;
+  padding-left: 11px;
+}
+
+.title {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.25px;
+  color: #3a4374;
+  margin-bottom: 4px;
+}
+
+.description {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  color: #647196;
+  margin-bottom: 12px;
+}
+
+.comment-bar {
+  display: flex;
+  align-items: center;
+  margin-left: 66px;
+}
+
+.number-of-comments {
+  padding-left: 8px;
+}
+
+.comments-content {
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.comment-of-numbers {
+  margin-bottom: 28px;
+  padding-top: 24px;
+  padding-left: 34px;
+}
+
+.comment-of-numbers h2 {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.25px;
+  color: #3a4374;
+}
+
+.main-order {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 17px;
+}
+
+.comment:not(:last-child) {
+  border-bottom: 1px solid rgba(140, 146, 179, 0.15);
+}
+
+.comment:last-child {
+  padding-top: 15px;
+}
+
+.user-name {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #647196;
+  margin-left: 32px;
+}
+
+.first-name {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.194444px;
+  color: #3a4374;
+  left: 685px;
+  margin-left: 78px;
+}
+
+.reply-button {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 19px;
+  color: #4661e6;
+  border: none;
+  background: none;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.reply-button:hover {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 19px;
+  text-decoration-line: underline;
+  color: #4661e6;
+}
+
+.reply-button-comments {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 19px;
+  color: #4661e6;
+  border: none;
+  background: none;
+  margin-left: auto;
+  margin-right: 32px;
+  cursor: pointer;
+}
+
+.reply-button-comments:hover {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 19px;
+  text-decoration-line: underline;
+  color: #4661e6;
+}
+
+.description-paragraph {
+  margin-bottom: 32px;
+}
+
+.description-paragraph p {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  color: #647196;
+}
+
+.comments-of-comments {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.after-comment {
+  padding-left: 77px;
+}
+
+.last {
+  left: 720px;
+}
+
+.after-comment-2 {
+  padding-left: 77px;
+}
+
+.description-paragraph-a {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  color: #647196;
+  padding-bottom: 32px;
+}
+
+.description-paragraph-a span {
+  font-family: "Jost";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  color: #ad1fea;
+}

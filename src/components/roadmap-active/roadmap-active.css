@@ -1,0 +1,190 @@
+.roadmap-active {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.roadmap-header {
+  display: flex;
+  justify-content: space-between;
+  width: 1110px;
+  margin-top: 78px;
+  padding: 23px 32px 27px 23px;
+
+  border-radius: 10px;
+  background: #373f68;
+}
+
+.roadmap-active__go-back-button {
+  color: #fff;
+  font-family: Jost;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.roadmap-active__go-back-button:hover {
+  text-decoration-line: underline;
+}
+
+.roadmap-active__go-back-button img {
+  margin-right: 6px;
+}
+
+.roadmap-title {
+  color: #fff;
+  font-family: Jost;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.333px;
+}
+
+.add-feedback-button {
+  color: #f2f4fe;
+  font-family: Jost;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  border-radius: 10px;
+  background: #ad1fea;
+  padding: 12.5px 25px 11.5px 24px;
+  border: none;
+  cursor: pointer;
+}
+.add-feedback-button:hover {
+  border-radius: 10px;
+  background: #c75af6;
+}
+
+.roadmap-box {
+  border-radius: 5px;
+  background: #fff;
+  width: 350px;
+  padding: 0px 32px 26px 30px;
+  position: relative;
+}
+
+.roadmap-content-bar-title {
+  color: #3a4374;
+  font-family: Jost;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.25px;
+}
+
+.roadmap-content-bar-description {
+  color: #647196;
+  font-family: Jost;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.box-color {
+  border-radius: 5px 5px 0px 0px;
+  background: #f49f85;
+  width: 350px;
+  height: 6px;
+  margin-bottom: 25px;
+  left: 0px;
+  position: absolute;
+}
+
+.box-actuall-status {
+  display: inline-block;
+  color: #647196;
+  line-height: normal;
+  font-style: normal;
+
+  font-family: Jost;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  padding-top: 25px;
+}
+
+.box-title {
+  color: #3a4374;
+  font-family: Jost;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.25px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+.box-title:hover {
+  color: #4661e6;
+  font-family: Jost;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.25px;
+}
+
+.box-description {
+  color: #647196;
+  font-family: Jost;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+
+.box-category {
+  color: #4661e6;
+  font-family: Jost;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  border-radius: 10px;
+  background: #f2f4ff;
+  padding: 5px 17px 6px 16px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 22px;
+}
+
+.box-likes-and-comments-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box-likes-info {
+  color: #3a4374;
+  text-align: center;
+  font-family: Jost;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.181px;
+
+  border-radius: 10px;
+  background: #f2f4fe;
+  border: none;
+  padding: 11px 12.5px 10px 15.5px;
+  cursor: pointer;
+}
+.box-likes-info:hover {
+  border-radius: 10px;
+  background: #cfd7ff;
+}
