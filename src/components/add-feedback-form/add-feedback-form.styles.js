@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SContentNewFeedback = styled.div`
+export const SContentNewFeedback = styled.form`
   position: relative;
   background: #ffffff;
   border-radius: 10px;
@@ -54,12 +54,17 @@ export const SWriteFeedbackTitle = styled.div`
     width: 100%;
     height: 48px;
     outline: none;
+
+    color: #3a4374;
+    font-family: "Jost";
+    font-size: 15px;
+    font-weight: 400;
+
+    padding: 13px 0px 13px 24px;
   }
 `;
 
-
-
-export const SAddDeedbackDetail = styled.div`
+export const SAddFeedbackDetail = styled.div`
   margin-bottom: 32px;
 
   span {
@@ -92,17 +97,17 @@ export const SAddDeedbackDetail = styled.div`
 
   .feedback-detail-textarea {
     color: #8c92b3;
-    font-family: Jost;
+    font-family: "Jost";
     font-size: 15px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
 
     width: 456px;
     height: 96px;
     outline: none;
     resize: none;
     border: none;
+
+    padding: 16px 0px 58px 23px;
 
     border-radius: 5px;
     background: #f7f8fd;

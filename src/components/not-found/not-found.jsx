@@ -2,6 +2,7 @@ import React from "react";
 
 import notFoundImg from "../assets/user-images/image-zena.jpg";
 import { SContainerNotFound, SContentNotFound } from "./not-found.styles";
+import { Link } from "react-router-dom";
 
 function NotFound() {
   return (
@@ -13,7 +14,9 @@ function NotFound() {
           Got a suggestion? Found a bug that needs to be squashed? We love
           hearing about new ideas to improve our app.
         </p>
-        <button className="add-feedback-button">+ Add Feedback</button>
+        <Link to="/new">
+          <button className="add-feedback-button">+ Add Feedback</button>
+        </Link>
       </SContentNotFound>
     </SContainerNotFound>
   );

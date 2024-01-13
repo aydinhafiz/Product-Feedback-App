@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import {
-  SAddDeedbackDetail,
+  SAddFeedbackDetail,
   SAddFeedbackButton,
   SCancelButton,
   SCancelOrAddFeedback,
@@ -13,9 +13,21 @@ import axios from "axios";
 import CustomSelect from "../../shared/custom-select";
 ///////////////////// IMAGES////////////////////////////////////////////
 import group from "../../components/assets/user-images/group4.png";
+import { useFormik } from "formik";
 
 function AddFeedbackForm() {
   const { token, user } = useContext(AuthContext);
+
+  const formik = useFormik({
+    initialValues: {
+      title: "",
+      detail: "",
+    },
+
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
 
   const [category, setCategory] = useState("Feature");
 
@@ -50,17 +62,16 @@ function AddFeedbackForm() {
   }
 
   return (
-    <SContentNewFeedback>
+    <SContentNewFeedback onSubmit={formik.handleSubmit}>
       <img className="group-image" src={group} alt="" />
       <SNewFeedbackTitle>Create New Feedback</SNewFeedbackTitle>
       <SWriteFeedbackTitle>
         <span>Feedback Title</span>
         <p>Add a short, descriptive headline</p>
         <input
-          value={inputFeedbackTitle}
-          onChange={(event) => {
-            setInputFeedbackTitle(event.target.value);
-          }}
+          name="title"
+          value={formik.values.title}
+          onChange={formik.handleChange}
           className="feedback-title-input"
           type="text"
         />
@@ -74,29 +85,25 @@ function AddFeedbackForm() {
         options={categoryOptions}
       />
 
-      <SAddDeedbackDetail>
+      <SAddFeedbackDetail>
         <span>Feedback Detail</span>
         <p>
           Include any specific comments on what should be improved, added, etc.
         </p>
         <textarea
-          value={feedbackDetail}
-          onChange={(event) => {
-            setFeedbackDetail(event.target.value);
-          }}
+          value={formik.values.detail}
+          onChange={formik.handleChange}
           className="feedback-detail-textarea"
           type="text"
-          name=""
+          name="detail"
           id=""
           cols=""
           rows=""
         ></textarea>
-      </SAddDeedbackDetail>
+      </SAddFeedbackDetail>
       <SCancelOrAddFeedback>
         <SCancelButton>Cancel</SCancelButton>
-        <SAddFeedbackButton onClick={addFeedback}>
-          Add Feedback
-        </SAddFeedbackButton>
+        <SAddFeedbackButton>Add Feedback</SAddFeedbackButton>
       </SCancelOrAddFeedback>
     </SContentNewFeedback>
   );

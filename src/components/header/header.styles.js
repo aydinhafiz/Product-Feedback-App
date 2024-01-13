@@ -67,6 +67,10 @@ export const SHeader = styled.div`
     justify-content: center;
   }
 
+  .right-header span {
+    margin-left: 5px;
+  }
+
   .sorted {
     font-family: "Jost";
     font-style: normal;

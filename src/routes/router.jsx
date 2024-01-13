@@ -56,10 +56,12 @@ const protectedRouter = createBrowserRouter([
   },
 ]);
 
+// router={token ? protectedRouter : router}
+
 function Router() {
   // const [isLogged, setIsLogged] = useState(true);
   const { token } = useContext(AuthContext);
-  return <RouterProvider router={token ? protectedRouter : router} />;
+  return <RouterProvider router={protectedRouter} />;
 }
 
 export default Router;

@@ -3,9 +3,7 @@ import styled from "styled-components";
 export const SRoadmap = styled.div`
   background: #ffffff;
   border-radius: 10px;
-  padding-bottom: 24px;
-  padding-left: 24px;
-
+  padding: 19px 24px 40px 24px;
   .nav-bar {
     display: flex;
     justify-content: space-between;
