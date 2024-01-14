@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SSignUpHeader = styled.div`
+export const SSignUpHeader = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;

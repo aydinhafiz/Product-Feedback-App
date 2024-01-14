@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { SSignUpHeader } from "../components/sign-up/signup.styles";
 import axios from "axios";
+import { useFormik } from "formik";
 
 function SignUp() {
   const [name, setname] = useState("Elvin");
@@ -9,6 +10,16 @@ function SignUp() {
   const [email, setEmail] = useState("aydin4@gmail.com");
   const [password, setPassword] = useState("123456");
   const [repeatPassword, setRepeatPassword] = useState("123456");
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      surname: "",
+      email: "",
+      password: "",
+      repeatPassword: "",
+    },
+  });
 
   async function signUp() {
     const response = await axios.post(
@@ -32,54 +43,44 @@ function SignUp() {
   }
 
   return (
-    <SSignUpHeader>
+    <SSignUpHeader onSubmit={formik.handleSubmit}>
       <div className="signup-page">
         <h2 className="title-signup">Sign Up</h2>
         <input
           className="signup-name"
           type="text"
           placeholder="name"
-          value={name}
-          onChange={(e) => {
-            setname(e.target.value);
-          }}
+          onChange={formik.handleChange}
+          value={formik.values.name}
         />
         <input
           className="signup-surname"
           type="text"
           placeholder="surname"
-          value={surname}
-          onChange={(e) => {
-            setsurname(e.target.value);
-          }}
+          onChange={formik.handleChange}
+          value={formik.values.surname}
         />
         <input
           className="signup-email"
           type="email"
           placeholder="Email address"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
+          onChange={formik.handleChange}
+          value={formik.values.email}
         />
         <div className="signup-info">
           <input
             className="signup-password"
             type="password"
             placeholder="Password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
+            onChange={formik.handleChange}
+            value={formik.values.password}
           />
           <input
             className="repeat-password"
             type="password"
             placeholder="Repeat password"
-            value={repeatPassword}
-            onChange={(e) => {
-              setRepeatPassword(e.target.value);
-            }}
+            onChange={formik.handleChange}
+            value={formik.values.repeatPassword}
           />
         </div>
         <button onClick={signUp} className="login-your-account">
