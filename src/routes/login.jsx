@@ -3,11 +3,23 @@ import { Link } from "react-router-dom";
 import { SLoginHeader } from "../components/login/login.styles";
 import axios from "axios";
 import { AuthContext } from "../contexts/auth-context";
+import { useFormik } from "formik";
 
 function Login() {
   const { handleLoginState } = useContext(AuthContext);
   const [username, setUsername] = useState("aydin2@gmail.com");
   const [password, setPassword] = useState("123456");
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
 
   async function login() {
     const response = await axios.post(
@@ -29,23 +41,25 @@ function Login() {
   }
 
   return (
-    <SLoginHeader>
+    <SLoginHeader onSubmit={formik.handleSubmit}>
       <div className="login-page">
         <h2 className="title-login">Login</h2>
         <div className="login-info">
           <input
             className="login-email"
             type="email"
+            name="email"
             placeholder="Email address"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={formik.values.email}
+            onChange={formik.handleChange}
           />
           <input
             className="login-password"
+            name="password"
             type="password"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={formik.values.password}
+            onChange={formik.handleChange}
           />
         </div>
         <button onClick={login} className="login-your-account">
