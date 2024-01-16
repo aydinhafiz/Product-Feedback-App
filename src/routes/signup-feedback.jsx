@@ -42,7 +42,6 @@ function SignUp() {
     return response;
   }
 
-  
   return (
     <SSignUpHeader onSubmit={formik.handleSubmit}>
       <div className="signup-page">
