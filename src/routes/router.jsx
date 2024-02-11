@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
   Navigate,
   RouterProvider,
@@ -56,12 +56,10 @@ const protectedRouter = createBrowserRouter([
   },
 ]);
 
-// router={token ? protectedRouter : router}
-
 function Router() {
-  // const [isLogged, setIsLogged] = useState(true);
+  const [isLogged, setIsLogged] = useState(true);
   const { token } = useContext(AuthContext);
-  return <RouterProvider router={protectedRouter} />;
+  return <RouterProvider router={token ? protectedRouter : router} />;
 }
 
 export default Router;

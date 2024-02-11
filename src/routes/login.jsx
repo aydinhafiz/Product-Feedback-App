@@ -4,29 +4,39 @@ import { SLoginHeader } from "../components/login/login.styles";
 import axios from "axios";
 import { AuthContext } from "../contexts/auth-context";
 import { useFormik } from "formik";
+import * as Yup from "yup";
 
 function Login() {
   const { handleLoginState } = useContext(AuthContext);
   const [username, setUsername] = useState("aydin2@gmail.com");
   const [password, setPassword] = useState("123456");
 
+  const LoginSchema = Yup.object().shape({
+    password: Yup.string()
+      .min(6, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Required"),
+    email: Yup.string().email("Invalid email").required("Required"),
+  });
+
   const formik = useFormik({
     initialValues: {
-      email: "",
-      password: "",
+      email: "aydin2@gmail.com",
+      password: "123456",
     },
 
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
     },
+    validationSchema: LoginSchema,
   });
 
   async function login() {
     const response = await axios.post(
       "https://tutorial-apis.herokuapp.com/api/v1/auth/login",
       {
-        username,
-        password,
+        // username,
+        // password,
       },
       {
         method: "POST",
@@ -40,7 +50,8 @@ function Login() {
     }
   }
 
-  
+  console.log(formik.errors);
+
   return (
     <SLoginHeader onSubmit={formik.handleSubmit}>
       <div className="login-page">
