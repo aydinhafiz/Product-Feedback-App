@@ -21,8 +21,8 @@ function Login() {
 
   const formik = useFormik({
     initialValues: {
-      email: "aydin2@gmail.com",
-      password: "123456",
+      email: "",
+      password: "",
     },
 
     onSubmit: (values) => {
@@ -50,29 +50,40 @@ function Login() {
     }
   }
 
-  console.log(formik.errors);
+  console.log(formik.touched);
 
   return (
     <SLoginHeader onSubmit={formik.handleSubmit}>
       <div className="login-page">
         <h2 className="title-login">Login</h2>
         <div className="login-info">
-          <input
-            className="login-email"
-            type="email"
-            name="email"
-            placeholder="Email address"
-            value={formik.values.email}
-            onChange={formik.handleChange}
-          />
-          <input
-            className="login-password"
-            name="password"
-            type="password"
-            placeholder="Password"
-            value={formik.values.password}
-            onChange={formik.handleChange}
-          />
+          <div>
+            <input
+              className="login-email"
+              type="email"
+              name="email"
+              placeholder="Email address"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+            {formik.touched.email && formik.errors.email && (
+              <p style={{ color: "red" }}>{formik.errors.email}</p>
+            )}
+
+            <input
+              className="login-password"
+              name="password"
+              type="password"
+              placeholder="Password"
+              value={formik.values.password}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+            {formik.touched.password && formik.errors.password && (
+              <p style={{ color: "red" }}>{formik.errors.password}</p>
+            )}
+          </div>
         </div>
         <button onClick={login} className="login-your-account">
           Login to your account
