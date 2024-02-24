@@ -61,5 +61,4 @@ function Router() {
   const { token } = useContext(AuthContext);
   return <RouterProvider router={token ? protectedRouter : router} />;
 }
-
 export default Router;
