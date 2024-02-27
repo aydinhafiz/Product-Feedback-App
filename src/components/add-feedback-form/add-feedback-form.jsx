@@ -14,7 +14,6 @@ import CustomSelect from "../../shared/custom-select";
 import { useForm } from "react-hook-form";
 ///////////////////// IMAGES////////////////////////////////////////////
 import group from "../../components/assets/user-images/group4.png";
-import { useFormik } from "formik";
 
 function AddFeedbackForm() {
   const { token, user } = useContext(AuthContext);
