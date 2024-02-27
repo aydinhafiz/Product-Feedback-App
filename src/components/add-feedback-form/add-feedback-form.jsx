@@ -11,6 +11,7 @@ import {
 import { AuthContext } from "../../contexts/auth-context";
 import axios from "axios";
 import CustomSelect from "../../shared/custom-select";
+import { useForm } from "react-hook-form";
 ///////////////////// IMAGES////////////////////////////////////////////
 import group from "../../components/assets/user-images/group4.png";
 import { useFormik } from "formik";
@@ -18,16 +19,7 @@ import { useFormik } from "formik";
 function AddFeedbackForm() {
   const { token, user } = useContext(AuthContext);
 
-  const formik = useFormik({
-    initialValues: {
-      title: "",
-      detail: "",
-    },
-
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-    },
-  });
+  const { register, handleSubmit, watch } = useForm();
 
   const [category, setCategory] = useState("Feature");
 
@@ -36,7 +28,8 @@ function AddFeedbackForm() {
 
   const categoryOptions = ["Feature", "UI", "UX", "Enhancement", "Bug"];
 
-  async function addFeedback() {
+  async function addFeedback(feedbackData) {
+    console.log(feedbackData.title);
     try {
       const config = {
         method: "POST",
@@ -48,9 +41,9 @@ function AddFeedbackForm() {
       const data = await axios.post(
         "https://tutorial-apis.herokuapp.com/api/v1/feedbacks",
         {
-          title: inputFeedbackTitle,
+          title: feedbackData.title,
           category,
-          description: feedbackDetail,
+          description: feedbackData.detail,
           user: user,
         },
         config
@@ -62,7 +55,7 @@ function AddFeedbackForm() {
   }
 
   return (
-    <SContentNewFeedback onSubmit={formik.handleSubmit}>
+    <SContentNewFeedback onSubmit={handleSubmit(addFeedback)}>
       <img className="group-image" src={group} alt="" />
       <SNewFeedbackTitle>Create New Feedback</SNewFeedbackTitle>
       <SWriteFeedbackTitle>
@@ -70,10 +63,9 @@ function AddFeedbackForm() {
         <p>Add a short, descriptive headline</p>
         <input
           name="title"
-          value={formik.values.title}
-          onChange={formik.handleChange}
           className="feedback-title-input"
           type="text"
+          {...register("title")}
         />
       </SWriteFeedbackTitle>
 
@@ -91,8 +83,7 @@ function AddFeedbackForm() {
           Include any specific comments on what should be improved, added, etc.
         </p>
         <textarea
-          value={formik.values.detail}
-          onChange={formik.handleChange}
+          {...register("detail")}
           className="feedback-detail-textarea"
           type="text"
           name="detail"

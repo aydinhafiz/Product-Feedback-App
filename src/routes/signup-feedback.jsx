@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { SSignUpHeader } from "../components/sign-up/signup.styles";
 import axios from "axios";
 import { useFormik } from "formik";
+import { useForm } from "react-hook-form";
 
 function SignUp() {
   const [name, setname] = useState("Elvin");
@@ -11,26 +12,18 @@ function SignUp() {
   const [password, setPassword] = useState("123456");
   const [repeatPassword, setRepeatPassword] = useState("123456");
 
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      surname: "",
-      email: "",
-      password: "",
-      repeatPassword: "",
-    },
-  });
+  const { register, handleSubmit, watch } = useForm();
 
-  async function signUp() {
+  async function signUp(signUpInfo) {
     const response = await axios.post(
       "https://tutorial-apis.herokuapp.com/api/v1/auth/register",
       {
-        name,
-        surname,
-        username: email,
+        name: signUpInfo.name,
+        surname: signUpInfo.surname,
+        username: signUpInfo.email,
         role: "user",
-        passwordConfirm: repeatPassword,
-        password,
+        password: signUpInfo.password,
+        passwordConfirm: signUpInfo.repeatPassword,
       },
       {
         method: "POST",
@@ -43,44 +36,39 @@ function SignUp() {
   }
 
   return (
-    <SSignUpHeader onSubmit={formik.handleSubmit}>
+    <SSignUpHeader onSubmit={handleSubmit(signUp)}>
       <div className="signup-page">
         <h2 className="title-signup">Sign Up</h2>
         <input
           className="signup-name"
           type="text"
           placeholder="name"
-          onChange={formik.handleChange}
-          value={formik.values.name}
+          {...register("name")}
         />
         <input
           className="signup-surname"
           type="text"
           placeholder="surname"
-          onChange={formik.handleChange}
-          value={formik.values.surname}
+          {...register("surname")}
         />
         <input
           className="signup-email"
           type="email"
           placeholder="Email address"
-          onChange={formik.handleChange}
-          value={formik.values.email}
+          {...register("email")}
         />
         <div className="signup-info">
           <input
             className="signup-password"
             type="password"
             placeholder="Password"
-            onChange={formik.handleChange}
-            value={formik.values.password}
+            {...register("password")}
           />
           <input
             className="repeat-password"
             type="password"
             placeholder="Repeat password"
-            onChange={formik.handleChange}
-            value={formik.values.repeatPassword}
+            {...register("repeatPassword")}
           />
         </div>
         <button onClick={signUp} className="login-your-account">

@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 
 function Login() {
   const { handleLoginState } = useContext(AuthContext);
-  const [username, setUsername] = useState("aydin2@gmail.com");
+  const [username, setUsername] = useState("aydin@gmail.com");
   const [password, setPassword] = useState("123456");
 
   const { register, handleSubmit } = useForm();
@@ -39,9 +39,19 @@ function Login() {
         <h2 className="title-login">Login</h2>
         <div className="login-info">
           <div>
-            <input type="text" {...register("email")} />
+            <input
+              className="login-email"
+              type="text"
+              placeholder="Email"
+              {...register("email")}
+            />
 
-            <input type="password" {...register("password")} />
+            <input
+              className="login-password"
+              placeholder="Password"
+              type="password"
+              {...register("password")}
+            />
           </div>
         </div>
         <button type="submit" className="login-your-account">
