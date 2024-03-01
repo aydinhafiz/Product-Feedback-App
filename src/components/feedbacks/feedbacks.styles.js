@@ -29,7 +29,9 @@ export const SFeedback = styled.div`
   border-radius: 10px;
   /* padding: 28px 32px 64px 32px; */
   padding: 28px 32px;
-
+  @media only screen and (max-width: 800px) {
+    padding: 18px 25px;
+  }
   /* margin-left: 30px; */
   flex: 1;
   max-width: 825px;

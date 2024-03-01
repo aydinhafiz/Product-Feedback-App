@@ -13,6 +13,14 @@ export const SHeader = styled.div`
   padding-bottom: 23px;
   padding-right: 24px;
 
+  @media only screen and (max-width: 930px) {
+    width: 750px;
+  }
+
+  @media only screen and (max-width: 800px) {
+    width: 650px;
+  }
+
   .add-feedback {
     padding: 12.5px 25px;
     border: none;

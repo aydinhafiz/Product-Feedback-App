@@ -15,6 +15,12 @@ const SContainer = styled.div`
   max-width: 1110px;
   margin: 0 auto;
   margin-top: 94px;
+
+  @media only screen and (max-width: 930px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 const Scontent = styled.div`
   flex: 1;

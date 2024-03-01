@@ -4,11 +4,18 @@ export const SCategories = styled.div`
   max-width: 255px;
   background: #ffffff;
   border-radius: 10px;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  padding-left: 24px;
-  padding-right: 50px;
   margin-bottom: 24px;
+
+  padding: 24px;
+
+  @media only screen and (max-width: 930px) {
+    max-width: 223px;
+  }
+
+  @media only screen and (max-width: 800px) {
+    max-height: 170px;
+    width: 180px;
+  }
 
   .logout-button {
     margin-top: 30px;
@@ -34,22 +41,25 @@ export const SCategories = styled.div`
   .category {
     background: #ffffff;
     border-radius: 10px;
-    padding-bottom: 24px;
+
+    /* padding-bottom: 24px;
     padding-right: 50px;
     padding-left: 24px;
-    padding-top: 24px;
-    margin-bottom: 24px;
+    padding-top: 24px; */
+
     margin-bottom: 14px;
     margin-right: 8px;
-    padding: 6px 16px;
-    font-family: "Jost";
-    font-style: normal;
+    padding: 5px 10px;
+
     font-weight: 600;
     font-size: 13px;
     line-height: 19px;
+    border-radius: 10px;
+
+    font-family: "Jost";
+    font-style: normal;
     color: #4661e6;
     background: #f2f4ff;
-    border-radius: 10px;
     border: none;
     cursor: pointer;
   }
