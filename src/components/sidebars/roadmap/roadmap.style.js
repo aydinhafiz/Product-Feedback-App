@@ -5,7 +5,7 @@ export const SRoadmap = styled.div`
   border-radius: 10px;
   padding: 19px 24px 40px 24px;
 
-  @media only screen and (max-width: 930px) {
+  @media only screen and (max-width: 950px) {
     width: 223px;
     height: 183px;
   }

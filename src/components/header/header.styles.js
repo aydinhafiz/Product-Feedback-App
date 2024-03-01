@@ -13,7 +13,7 @@ export const SHeader = styled.div`
   padding-bottom: 23px;
   padding-right: 24px;
 
-  @media only screen and (max-width: 930px) {
+  @media only screen and (max-width: 950px) {
     width: 750px;
   }
 
@@ -36,6 +36,9 @@ export const SHeader = styled.div`
     text-decoration: none;
     color: #f2f4fe;
 
+    @media only screen and (max-width: 800px) {
+      padding: 10.5px 10px;
+    }
     :hover {
       background: #c75af6;
       border-radius: 10px;
@@ -73,6 +76,34 @@ export const SHeader = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .log-out-header {
+    padding: 12.5px 25px;
+    border: none;
+    background: #ad1fea;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: none;
+    color: #f2f4fe;
+    display: none;
+
+    @media only screen and (max-width: 800px) {
+      padding: 10.5px 10px;
+    }
+
+    @media only screen and (max-width: 950px) {
+      display: grid;
+    }
+  }
+  .log-out-header:hover {
+    background: #c75af6;
+    border-radius: 10px;
   }
 
   .right-header span {

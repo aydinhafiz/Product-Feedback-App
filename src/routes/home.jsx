@@ -16,7 +16,7 @@ const SContainer = styled.div`
   margin: 0 auto;
   margin-top: 94px;
 
-  @media only screen and (max-width: 930px) {
+  @media only screen and (max-width: 950px) {
     display: flex;
     flex-direction: column;
     align-items: center;

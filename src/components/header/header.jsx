@@ -7,9 +7,10 @@ import plus from "../../components/assets/shared/icon-plus.svg";
 import SortSelect from "../sort-select/sort-select";
 import { useContext } from "react";
 import { FeedbackContext } from "../../contexts/feedback-context";
+import { AuthContext } from "../../contexts/auth-context";
 function Header() {
   const { productRequests } = useContext(FeedbackContext);
-
+  const { handleLogoutState } = useContext(AuthContext);
   return (
     <SHeader>
       <div className="left-header">
@@ -24,6 +25,9 @@ function Header() {
       </div>
 
       <div className="right-header">
+        <button className="log-out-header" onClick={handleLogoutState}>
+          Log Out
+        </button>
         <Link to="/new" className="add-feedback">
           <img src={plus} alt="" />
           <span>Add Feedback</span>

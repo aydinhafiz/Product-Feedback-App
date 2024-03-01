@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../contexts/auth-context";
 
 const SSidebar = styled.div`
-  @media only screen and (max-width: 930px) {
+  @media only screen and (max-width: 950px) {
     display: flex;
     justify-content: center;
     margin-bottom: 24px;
@@ -41,7 +41,7 @@ const SLogOutButton = styled.button`
     border-radius: 10px;
   }
 
-  @media only screen and (max-width: 930px) {
+  @media only screen and (max-width: 950px) {
     margin-top: 0;
     padding: 8.5px 15px;
     max-height: 50px;
@@ -64,12 +64,12 @@ const SFeedbackBoard = styled.div`
   );
   border-radius: 10px;
 
-  @media only screen and (max-width: 930px) {
+  @media only screen and (max-width: 950px) {
     max-height: 183px;
     width: 223px;
   }
 
-  @media only screen and (min-width: 930px) {
+  @media only screen and (min-width: 950px) {
     margin-bottom: 24px;
   }
 
@@ -108,7 +108,7 @@ const SFeedbackBoard = styled.div`
 function Sidebar() {
   const { handleLogoutState } = useContext(AuthContext);
   return (
-    <SSidebar>
+    <SSidebar>  
       <SFeedbackBoard>
         <h2>Frontend Mentor</h2>
         <span>Feedback Board</span>

@@ -8,7 +8,7 @@ export const SCategories = styled.div`
 
   padding: 24px;
 
-  @media only screen and (max-width: 930px) {
+  @media only screen and (max-width: 950px) {
     max-width: 223px;
   }
 
