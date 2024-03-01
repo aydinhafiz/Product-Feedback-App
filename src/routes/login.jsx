@@ -11,14 +11,19 @@ function Login() {
   const [username, setUsername] = useState("aydin@gmail.com");
   const [password, setPassword] = useState("123456");
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm({
+    defaultValues: {
+      username: "aydin@gmail.com",
+      password: "123456",
+    },
+  });
 
   async function login(credentials) {
     console.log(credentials);
     const response = await axios.post(
       "https://tutorial-apis.herokuapp.com/api/v1/auth/login",
       {
-        username: credentials.email,
+        username: credentials.username,
         password: credentials.password,
       },
       {
@@ -43,7 +48,7 @@ function Login() {
               className="login-email"
               type="text"
               placeholder="Email"
-              {...register("email")}
+              {...register("username")}
             />
 
             <input

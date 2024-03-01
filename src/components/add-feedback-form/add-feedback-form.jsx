@@ -18,7 +18,13 @@ import group from "../../components/assets/user-images/group4.png";
 function AddFeedbackForm() {
   const { token, user } = useContext(AuthContext);
 
-  const { register, handleSubmit, watch } = useForm();
+  const { register, handleSubmit, control } = useForm({
+    defaultValues: {
+      title: "",
+      category: "Feature",
+      description: "",
+    },  
+  });
 
   const [category, setCategory] = useState("Feature");
 
@@ -28,7 +34,7 @@ function AddFeedbackForm() {
   const categoryOptions = ["Feature", "UI", "UX", "Enhancement", "Bug"];
 
   async function addFeedback(feedbackData) {
-    console.log(feedbackData.title);
+    console.log(feedbackData);
     try {
       const config = {
         method: "POST",
@@ -69,8 +75,10 @@ function AddFeedbackForm() {
       </SWriteFeedbackTitle>
 
       <CustomSelect
-        value={category}
-        handleChange={setCategory}
+        // value={category}
+        // handleChange={setCategory}
+        control={control}
+        name="category"
         label="Category"
         description="Choose a ategory for your feedback"
         options={categoryOptions}
