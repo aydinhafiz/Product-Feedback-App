@@ -1,20 +1,15 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
 
-const { handleSubmit, control } = useForm();
-
 function InputLogin({ designName, placeholder, type, name }) {
+  const { handleSubmit, control } = useForm();
+
   return (
     <Controller
       control={control}
-      name="ReactDatepicker"
+      name={name}
       render={({ field: { onChange, onBlur, value, ref } }) => (
-        <input
-          className="login-password"
-          placeholder="Password"
-          type="password"
-          {...register("password")}
-        />
+        <input className={designName} placeholder={placeholder} type={type} />
       )}
     />
   );

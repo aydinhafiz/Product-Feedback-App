@@ -5,6 +5,7 @@ import axios from "axios";
 import { AuthContext } from "../contexts/auth-context";
 
 import { useForm } from "react-hook-form";
+import InputLogin from "../shared/input-login/input-login";
 
 function Login() {
   const { handleLoginState } = useContext(AuthContext);
@@ -44,18 +45,18 @@ function Login() {
         <h2 className="title-login">Login</h2>
         <div className="login-info">
           <div>
-            <input
-              className="login-email"
-              type="text"
-              placeholder="Email"
-              {...register("username")}
+            <InputLogin
+              designName={"login-email "}
+              placeholder={"Email"}
+              type={"text"}
+              name={"email-login"}
             />
 
-            <input
-              className="login-password"
-              placeholder="Password"
-              type="password"
-              {...register("password")}
+            <InputLogin
+              designName={"login-password "}
+              placeholder={"Password"}
+              type={"password"}
+              name={"password-login"}
             />
           </div>
         </div>
