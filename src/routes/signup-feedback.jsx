@@ -2,17 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { SSignUpHeader } from "../components/sign-up/signup.styles";
 import axios from "axios";
-import { useFormik } from "formik";
 import { useForm } from "react-hook-form";
+import SInput from "../shared/input-signup/input-signup.styles";
 
 function SignUp() {
-  const [name, setname] = useState("Elvin");
-  const [surname, setsurname] = useState("Beytullazada");
-  const [email, setEmail] = useState("aydin4@gmail.com");
-  const [password, setPassword] = useState("123456");
-  const [repeatPassword, setRepeatPassword] = useState("123456");
-
-  const { register, handleSubmit, watch } = useForm();
+  const { handleSubmit, control } = useForm();
 
   async function signUp(signUpInfo) {
     const response = await axios.post(
@@ -39,36 +33,44 @@ function SignUp() {
     <SSignUpHeader onSubmit={handleSubmit(signUp)}>
       <div className="signup-page">
         <h2 className="title-signup">Sign Up</h2>
-        <input
-          className="signup-name"
-          type="text"
-          placeholder="name"
-          {...register("name")}
+        <SInput
+          placeholder={"Name"}
+          type={"text"}
+          name={"name"}
+          control={control}
+          extraStyles={`margin-bottom:24px;`}
         />
-        <input
-          className="signup-surname"
-          type="text"
-          placeholder="surname"
-          {...register("surname")}
+
+        <SInput
+          placeholder={"Surname"}
+          type={"text"}
+          name={"surname"}
+          control={control}
+          extraStyles={`margin-bottom:24px;`}
         />
-        <input
-          className="signup-email"
-          type="email"
-          placeholder="Email address"
-          {...register("email")}
+
+        <SInput
+          placeholder={"Email address"}
+          type={"email"}
+          name={"email"}
+          control={control}
+          extraStyles={`margin-bottom:24px;`}
         />
+
         <div className="signup-info">
-          <input
-            className="signup-password"
-            type="password"
-            placeholder="Password"
-            {...register("password")}
+          <SInput
+            placeholder={"Password"}
+            type={"password"}
+            name={"password"}
+            control={control}
+            extraStyles={`margin-bottom:24px;`}
           />
-          <input
-            className="repeat-password"
-            type="password"
-            placeholder="Repeat password"
-            {...register("repeatPassword")}
+
+          <SInput
+            placeholder={"Repeat password"}
+            type={"password"}
+            name={"repeatPassword"}
+            control={control}
           />
         </div>
         <button onClick={signUp} className="login-your-account">

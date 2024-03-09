@@ -5,12 +5,11 @@ import axios from "axios";
 import { AuthContext } from "../contexts/auth-context";
 
 import { useForm } from "react-hook-form";
-import InputLogin from "../shared/input-login/input-login";
+import InputLogin from "../shared/input-signup/input-signup";
+import { SLoginInput } from "../shared/input-login/input-login";
 
 function Login() {
   const { handleLoginState } = useContext(AuthContext);
-  const [username, setUsername] = useState("aydin@gmail.com");
-  const [password, setPassword] = useState("123456");
 
   const { register, handleSubmit } = useForm({
     defaultValues: {
@@ -45,18 +44,18 @@ function Login() {
         <h2 className="title-login">Login</h2>
         <div className="login-info">
           <div>
-            <InputLogin
-              designName={"login-email "}
+            <input
+              className="primary-input mb-24"
               placeholder={"Email"}
-              type={"text"}
-              name={"email-login"}
+              type={"email"}
+              {...register("username")}
             />
 
-            <InputLogin
-              designName={"login-password "}
+            <input
+              className="primary-input"
               placeholder={"Password"}
               type={"password"}
-              name={"password-login"}
+              {...register("password")}
             />
           </div>
         </div>

@@ -1,8 +1,6 @@
-import React from "react";
-import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
-export const SLoginInput = styled.input`
+const SInput = styled.input`
   font-family: "Jost";
   font-style: normal;
   font-weight: 400;
@@ -23,17 +21,4 @@ export const SLoginInput = styled.input`
   ${({ extraStyles }) => (extraStyles ? `${extraStyles}` : "")}
 `;
 
-function Inputlogin({ placeholder, type, registerKey, extraStyles }) {
-  const { register } = useForm({});
-
-  return (
-    <SLoginInput
-      placeholder={placeholder}
-      type={type}
-      {...register({ registerKey })}
-      extraStyles={extraStyles}
-    />
-  );
-}
-
-export default Inputlogin;
+export default SInput;
