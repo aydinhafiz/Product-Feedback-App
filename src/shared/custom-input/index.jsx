@@ -1,6 +1,6 @@
 import React from "react";
 import { Controller } from "react-hook-form";
-import SInput from "./input-signup.styles";
+import SInput from "./index.styles";
 
 function InputLogin({ extraStyles, placeholder, type, name, control }) {
   return (

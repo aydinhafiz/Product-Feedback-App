@@ -25,6 +25,9 @@ const SContainer = styled.div`
 const Scontent = styled.div`
   flex: 1;
   margin-left: 20px;
+  @media only screen and (max-width: 950px) {
+    margin-left: 0;
+  }
 `;
 
 function Home() {

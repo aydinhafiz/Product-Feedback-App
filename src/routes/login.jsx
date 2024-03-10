@@ -5,16 +5,14 @@ import axios from "axios";
 import { AuthContext } from "../contexts/auth-context";
 
 import { useForm } from "react-hook-form";
-import InputLogin from "../shared/input-signup/input-signup";
-import { SLoginInput } from "../shared/input-login/input-login";
 
 function Login() {
   const { handleLoginState } = useContext(AuthContext);
 
   const { register, handleSubmit } = useForm({
     defaultValues: {
-      username: "aydin@gmail.com",
-      password: "123456",
+      username: "",
+      password: "",
     },
   });
 

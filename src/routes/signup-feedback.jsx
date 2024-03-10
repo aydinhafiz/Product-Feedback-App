@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { SSignUpHeader } from "../components/sign-up/signup.styles";
-import axios from "axios";
 import { useForm } from "react-hook-form";
-import SInput from "../shared/input-signup/input-signup.styles";
+import axios from "axios";
+import InputLogin from "../shared/custom-input";
 
 function SignUp() {
   const { handleSubmit, control } = useForm();
@@ -15,9 +15,9 @@ function SignUp() {
         name: signUpInfo.name,
         surname: signUpInfo.surname,
         username: signUpInfo.email,
-        role: "user",
         password: signUpInfo.password,
         passwordConfirm: signUpInfo.repeatPassword,
+        role: "user",
       },
       {
         method: "POST",
@@ -33,7 +33,7 @@ function SignUp() {
     <SSignUpHeader onSubmit={handleSubmit(signUp)}>
       <div className="signup-page">
         <h2 className="title-signup">Sign Up</h2>
-        <SInput
+        <InputLogin
           placeholder={"Name"}
           type={"text"}
           name={"name"}
@@ -41,7 +41,7 @@ function SignUp() {
           extraStyles={`margin-bottom:24px;`}
         />
 
-        <SInput
+        <InputLogin
           placeholder={"Surname"}
           type={"text"}
           name={"surname"}
@@ -49,7 +49,7 @@ function SignUp() {
           extraStyles={`margin-bottom:24px;`}
         />
 
-        <SInput
+        <InputLogin
           placeholder={"Email address"}
           type={"email"}
           name={"email"}
@@ -58,7 +58,7 @@ function SignUp() {
         />
 
         <div className="signup-info">
-          <SInput
+          <InputLogin
             placeholder={"Password"}
             type={"password"}
             name={"password"}
@@ -66,14 +66,14 @@ function SignUp() {
             extraStyles={`margin-bottom:24px;`}
           />
 
-          <SInput
+          <InputLogin
             placeholder={"Repeat password"}
             type={"password"}
             name={"repeatPassword"}
             control={control}
           />
         </div>
-        <button onClick={signUp} className="login-your-account">
+        <button type="submit" className="login-your-account">
           Create an account
         </button>
         <h3 className="dont-have-account">

@@ -79,6 +79,11 @@ const SFeedbackBoard = styled.div`
     padding: 90px 0px 0px 15px;
   }
 
+  @media only screen and (max-width: 680px) {
+    width: 180px;
+    padding: 80px 0px 0px 15px;
+  }
+
   padding-top: 62px;
   padding-left: 24px;
   padding-bottom: 46px;
@@ -91,6 +96,10 @@ const SFeedbackBoard = styled.div`
     line-height: 29px;
     letter-spacing: -0.25px;
     color: #ffffff;
+
+    @media only screen and (max-width: 680px) {
+      font-size: 17px;
+    }
   }
 
   span {
@@ -102,13 +111,16 @@ const SFeedbackBoard = styled.div`
     color: #ffffff;
     mix-blend-mode: normal;
     opacity: 0.75;
+    @media only screen and (max-width: 680px) {
+      font-size: 13px;
+    }
   }
 `;
 
 function Sidebar() {
   const { handleLogoutState } = useContext(AuthContext);
   return (
-    <SSidebar>  
+    <SSidebar>
       <SFeedbackBoard>
         <h2>Frontend Mentor</h2>
         <span>Feedback Board</span>
