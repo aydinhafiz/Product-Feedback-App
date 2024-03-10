@@ -80,7 +80,8 @@ const SFeedbackBoard = styled.div`
   }
 
   @media only screen and (max-width: 680px) {
-    width: 180px;
+    max-height: 150px;
+    width: 150px;
     padding: 80px 0px 0px 15px;
   }
 

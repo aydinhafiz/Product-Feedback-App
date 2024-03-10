@@ -17,6 +17,11 @@ export const SCategories = styled.div`
     width: 180px;
   }
 
+  @media only screen and (max-width: 680px) {
+    max-height: 150px;
+    width: 150px;
+  }
+
   .logout-button {
     margin-top: 30px;
     padding: 12.5px 25px;
@@ -47,8 +52,6 @@ export const SCategories = styled.div`
     padding-left: 24px;
     padding-top: 24px; */
 
-    margin-bottom: 14px;
-    margin-right: 8px;
     padding: 5px 10px;
 
     font-weight: 600;
@@ -62,6 +65,13 @@ export const SCategories = styled.div`
     background: #f2f4ff;
     border: none;
     cursor: pointer;
+
+    @media only screen and (max-width: 680px) {
+      padding: 5px 10px;
+      font-size: 10px;
+      margin-bottom: 10px;
+      margin-right: 2px;
+    }
   }
 
   .category:hover {

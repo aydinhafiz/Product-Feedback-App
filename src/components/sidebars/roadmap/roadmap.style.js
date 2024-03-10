@@ -16,11 +16,20 @@ export const SRoadmap = styled.div`
 
     padding: 15px 0px 0px 15px;
   }
+
+  @media only screen and (max-width: 680px) {
+    max-height: 150px;
+    width: 150px;
+  }
   .nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 24px;
+
+    @media only screen and (max-width: 680px) {
+      padding-bottom: 10px;
+    }
   }
 
   .nav-bar h2 {
@@ -31,6 +40,10 @@ export const SRoadmap = styled.div`
     font-size: 18px;
     line-height: 26px;
     letter-spacing: -0.25px;
+
+    @media only screen and (max-width: 680px) {
+      font-size: 15px;
+    }
   }
 
   .roadmap-view {
@@ -46,6 +59,9 @@ export const SRoadmap = styled.div`
     cursor: pointer;
     border: none;
     background: none;
+    @media only screen and (max-width: 680px) {
+      font-size: 10px;
+    }
   }
   .roadmap-view:hover {
     font-weight: 600;
@@ -132,5 +148,10 @@ export const SRoadmap = styled.div`
     color: #647196;
     margin-right: 24px;
     text-transform: capitalize;
+
+    @media only screen and (max-width: 680px) {
+      font-size: 13px;
+      margin-right: 20px;
+    }
   }
 `;
