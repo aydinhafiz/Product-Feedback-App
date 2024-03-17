@@ -9,6 +9,7 @@ import axios from "axios";
 import arrowUp from "../../components/assets/shared/icon-arrow-up.svg";
 import comment from "../../components/assets/shared/icon-comments.svg";
 import whiteArrowUp from "../../components/assets/shared/white-arrow-up.png";
+import { useState } from "react";
 
 function Feedback(props) {
   const { getData } = useContext(FeedbackContext);
@@ -17,6 +18,8 @@ function Feedback(props) {
     props;
 
   console.log(id);
+
+  const [isLiked, setIsLiked] = useState(false);
 
   function commentsData() {
     let count = 0;
@@ -34,6 +37,8 @@ function Feedback(props) {
   const commentsCount = commentsData(props);
 
   async function getUpvote() {
+    setIsLiked(true);
+
     const config = {
       method: "GET",
       headers: {
@@ -48,9 +53,11 @@ function Feedback(props) {
       );
       if (data.data.status === "success") {
         getData();
+        setIsLiked(false);
       }
     } catch (error) {
       console.log(error);
+      setIsLiked(false);
     }
   }
 
@@ -75,14 +82,13 @@ function Feedback(props) {
         <span>{upvotes}</span>
       </div> */}
 
-
-
       <UpvoteBox
         upvotesUsers={upvotesUsers}
         user={user}
         getUpvote={getUpvote}
         upvotes={upvotes}
         id={id}
+        isLiked={isLiked}
       />
 
       <div className="info-bar">
@@ -106,7 +112,8 @@ function Feedback(props) {
 
 export default Feedback;
 
-function UpvoteBox({ upvotesUsers, user, getUpvote, upvotes, id }) {
+function UpvoteBox({ upvotesUsers, user, getUpvote, upvotes, id, isLiked }) {
+  console.log(isLiked);
   return (
     <div
       className={
