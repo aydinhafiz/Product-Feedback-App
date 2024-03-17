@@ -43,7 +43,7 @@ function Login() {
         <div className="login-info">
           <div>
             <input
-              className="primary-input mb-24"
+              className="primary-input mb-24 pt-15"
               placeholder={"Email"}
               type={"email"}
               {...register("username")}

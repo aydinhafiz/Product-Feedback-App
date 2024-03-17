@@ -47,12 +47,12 @@ export const SLoginContainer = styled.form`
     line-height: 22px;
     color: #3a4374;
 
-    padding: 0px 18px;
+    padding: 8px 18px 8px 18px;
+
     width: 100%;
     border: none;
     background: none;
     border-bottom: 1px solid #4661e6;
-    padding-bottom: 17px;
     mix-blend-mode: normal;
 
     outline: none;
