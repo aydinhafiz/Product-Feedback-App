@@ -115,7 +115,8 @@ export default Feedback;
 function UpvoteBox({ upvotesUsers, user, getUpvote, upvotes, id, isLiked }) {
   console.log(isLiked);
   return (
-    <div
+    <button
+      disabled={isLiked}
       className={
         upvotesUsers.includes(user.id)
           ? " likes-bar-upvote upvoted"
@@ -131,6 +132,6 @@ function UpvoteBox({ upvotesUsers, user, getUpvote, upvotes, id, isLiked }) {
         <img src={arrowUp} alt="" />
       )}
       <span>{upvotes}</span>
-    </div>
+    </button>
   );
 }
