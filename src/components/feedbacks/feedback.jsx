@@ -122,6 +122,7 @@ function UpvoteBox({
   id,
   isLiked,
   mutate,
+  isLoading,
 }) {
   console.log(isLiked);
   return (
