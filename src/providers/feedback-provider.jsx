@@ -10,31 +10,31 @@ function FeedbackProvider(props) {
   function filterRequests() {}
   function upvoteRequest() {}
 
-  async function getData() {
-    let data;
-    const config = {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token} `,
-        "Content-Type": `application/json`,
-      },
-    };
-    try {
-      data = await axios.get(
-        "https://tutorial-apis.herokuapp.com/api/v1/feedbacks",
-        config
-      );
-      setProductRequests(data.data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  // async function getData() {
+  //   let data;
+  //   const config = {
+  //     method: "GET",
+  //     headers: {
+  //       Authorization: `Bearer ${token} `,
+  //       "Content-Type": `application/json`,
+  //     },
+  //   };
+  //   try {
+  //     data = await axios.get(
+  //       "https://tutorial-apis.herokuapp.com/api/v1/feedbacks",
+  //       config
+  //     );
+  //     setProductRequests(data.data.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
-  useEffect(() => {
-    if (token) {
-      getData();
-    }
-  }, [token]);
+  // useEffect(() => {
+  //   if (token) {
+  //     getData();
+  //   }
+  // }, [token]);
   return (
     <FeedbackContext.Provider
       value={{
@@ -43,7 +43,7 @@ function FeedbackProvider(props) {
         upvoteRequest,
         productRequests,
         filterRequests,
-        getData,
+        // getData,
       }}
     >
       {props.children}

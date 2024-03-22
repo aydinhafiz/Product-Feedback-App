@@ -3,8 +3,8 @@ import React, { useContext } from "react";
 import Feedback from "../components/feedbacks/feedback";
 import { FeedbackContext } from "../contexts/feedback-context";
 
-function FeedbackList() {
-  const { productRequests, upvoteRequest } = useContext(FeedbackContext);
+function FeedbackList({ productRequests }) {
+  const { upvoteRequest } = useContext(FeedbackContext);
 
   return (
     <div className="feedbacks ">

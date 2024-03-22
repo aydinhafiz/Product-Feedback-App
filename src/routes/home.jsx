@@ -8,6 +8,10 @@ import Sidebar from "../components/sidebars/sidebar";
 import FeedbackList from "../components/feedbacklist";
 import NotFound from "../components/not-found/not-found";
 import { FeedbackContext } from "../contexts/feedback-context";
+import { AuthContext } from "../contexts/auth-context";
+import axios from "axios";
+import { useQuery } from "react-query";
+import { getAll } from "../components/services";
 
 const SContainer = styled.div`
   display: flex;
@@ -31,14 +35,30 @@ const Scontent = styled.div`
 `;
 
 function Home() {
-  const { productRequests } = useContext(FeedbackContext);
+  const authObjString = localStorage.getItem("authObj");
+  let authObj;
+  if (authObjString) {
+    authObj = JSON.parse(authObjString);
+  }
+
+  const token = authObj?.token;
+
+  const { isLoading, error, data } = useQuery("feedbacks", getAll, {
+    refetchInterval: 500,
+  });
+
+  console.log(data);
 
   return (
     <SContainer>
       <Sidebar />
       <Scontent>
         <Header />
-        {productRequests.length > 0 ? <FeedbackList /> : <NotFound />}
+        {data?.data.length > 0 ? (
+          <FeedbackList productRequests={data?.data} />
+        ) : (
+          <NotFound />
+        )}
       </Scontent>
     </SContainer>
   );

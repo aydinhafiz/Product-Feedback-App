@@ -10,12 +10,36 @@ import arrowUp from "../../components/assets/shared/icon-arrow-up.svg";
 import comment from "../../components/assets/shared/icon-comments.svg";
 import whiteArrowUp from "../../components/assets/shared/white-arrow-up.png";
 import { useState } from "react";
+import { useMutation } from "react-query";
 
 function Feedback(props) {
   const { getData } = useContext(FeedbackContext);
   const { token, user } = useContext(AuthContext);
   const { upvotes, title, description, category, comments, id, upvotesUsers } =
     props;
+
+  const { mutate, isLoading } = useMutation({
+    mutationFn: async (id) => {
+      let data;
+
+      const config = {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": `applicaion/json`,
+        },
+      };
+      try {
+        data = await axios.get(
+          `https://tutorial-apis.herokuapp.com/api/v1/feedbacks/upvote/${id}`,
+          config
+        );
+      } catch (error) {
+        console.warn(error);
+      }
+      return data;
+    },
+  });
 
   const [isLiked, setIsLiked] = useState(false);
 
@@ -36,27 +60,6 @@ function Feedback(props) {
 
   async function getUpvote() {
     setIsLiked(true);
-
-    const config = {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": `applicaion/json`,
-      },
-    };
-    try {
-      const data = await axios.get(
-        `https://tutorial-apis.herokuapp.com/api/v1/feedbacks/upvote/${id}`,
-        config
-      );
-      if (data.data.status === "success") {
-        getData();
-        setIsLiked(false);
-      }
-    } catch (error) {
-      console.log(error);
-      setIsLiked(false);
-    }
   }
 
   return (
@@ -86,6 +89,8 @@ function Feedback(props) {
         upvotes={upvotes}
         id={id}
         isLiked={isLiked}
+        mutate={mutate}
+        isLoading={isLoading}
       />
 
       <div className="info-bar">
@@ -109,18 +114,26 @@ function Feedback(props) {
 
 export default Feedback;
 
-function UpvoteBox({ upvotesUsers, user, getUpvote, upvotes, id, isLiked }) {
+function UpvoteBox({
+  upvotesUsers,
+  user,
+  getUpvote,
+  upvotes,
+  id,
+  isLiked,
+  mutate,
+}) {
   console.log(isLiked);
   return (
     <button
-      disabled={isLiked}
+      disabled={isLoading}
       className={
         upvotesUsers.includes(user.id)
           ? " likes-bar-upvote upvoted"
           : "likes-bar "
       }
       onClick={() => {
-        getUpvote(id);
+        mutate(id);
       }}
     >
       {upvotesUsers.includes(user.id) ? (

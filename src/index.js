@@ -7,21 +7,25 @@ import GlobalStyle from "./components/global-styles/global-styles";
 import Router from "./routes/router";
 import FeedbackProvider from "./providers/feedback-provider";
 import AuthProvider from "./providers/auth-provider";
+import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
 const theme = {
   primary: "#c75af6",
 };
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const queryClient = new QueryClient();
 
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <AuthProvider>
-      <FeedbackProvider>
-        <Router />
-      </FeedbackProvider>
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <FeedbackProvider>
+          <Router />
+        </FeedbackProvider>
+      </AuthProvider>
+    </QueryClientProvider>
   </ThemeProvider>
 );
