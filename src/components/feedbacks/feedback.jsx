@@ -114,6 +114,7 @@ function Feedback(props) {
 
 export default Feedback;
 
+
 function UpvoteBox({
   upvotesUsers,
   user,
