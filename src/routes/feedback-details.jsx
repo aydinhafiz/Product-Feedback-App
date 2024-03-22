@@ -39,7 +39,6 @@ function FeedbackDetails(props) {
     }
     getData();
   }, []);
-  console.log(request?.upvotesUsers);
   return (
     <div className="container-list">
       <Navbar />

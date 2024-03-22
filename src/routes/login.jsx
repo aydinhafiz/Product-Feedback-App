@@ -19,7 +19,6 @@ function Login() {
   });
 
   async function login(credentials) {
-    console.log(credentials);
     setLoading(true);
     try {
       const response = await axios.post(

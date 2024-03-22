@@ -34,7 +34,6 @@ function AddFeedbackForm() {
   const categoryOptions = ["Feature", "UI", "UX", "Enhancement", "Bug"];
 
   async function addFeedback(feedbackData) {
-    console.log(feedbackData);
     try {
       const config = {
         method: "POST",

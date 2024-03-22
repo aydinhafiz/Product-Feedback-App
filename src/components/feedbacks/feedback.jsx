@@ -17,8 +17,6 @@ function Feedback(props) {
   const { upvotes, title, description, category, comments, id, upvotesUsers } =
     props;
 
-  console.log(id);
-
   const [isLiked, setIsLiked] = useState(false);
 
   function commentsData() {
@@ -61,7 +59,6 @@ function Feedback(props) {
     }
   }
 
-  console.log(upvotesUsers);
   return (
     <SFeedback>
       {/* <div
