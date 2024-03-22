@@ -29,7 +29,13 @@ export const SFeedback = styled.div`
   border-radius: 10px;
   /* padding: 28px 32px 64px 32px; */
   padding: 28px 32px;
-
+  @media only screen and (max-width: 800px) {
+    padding: 18px 25px;
+  }
+  @media only screen and (max-width: 680px) {
+    padding: 15px 20px;
+    max-width: 600px;
+  }
   /* margin-left: 30px; */
   flex: 1;
   max-width: 825px;
@@ -46,6 +52,10 @@ export const SFeedback = styled.div`
     color: #3a4374;
     cursor: pointer;
     text-decoration: none;
+
+    @media only screen and (max-width: 680px) {
+      font-size: 16px;
+    }
   }
 
   .title :hover {
@@ -66,6 +76,11 @@ export const SFeedback = styled.div`
     font-size: 16px;
     line-height: 23px;
     color: #647196;
+
+    @media only screen and (max-width: 680px) {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
   }
 
   .info-bar button {
@@ -79,6 +94,11 @@ export const SFeedback = styled.div`
     background: #f2f4ff;
     border-radius: 10px;
     padding: 5px 16px 5px 16px;
+
+    @media only screen and (max-width: 680px) {
+      padding: 3px 14px;
+      font-size: 12px;
+    }
   }
 
   .comments-bar {
@@ -90,6 +110,11 @@ export const SFeedback = styled.div`
     margin-right: 8px;
     width: 18px;
     height: 16px;
+
+    @media only screen and (max-width: 680px) {
+      width: 16px;
+      height: 14px;
+    }
   }
 
   .info-bar {

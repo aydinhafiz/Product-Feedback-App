@@ -13,6 +13,19 @@ export const SHeader = styled.div`
   padding-bottom: 23px;
   padding-right: 24px;
 
+  @media only screen and (max-width: 950px) {
+    width: 750px;
+  }
+
+  @media only screen and (max-width: 800px) {
+    width: 650px;
+  }
+
+  @media only screen and (max-width: 680px) {
+    padding: 15px 20px;
+    max-width: 600px;
+  }
+
   .add-feedback {
     padding: 12.5px 25px;
     border: none;
@@ -27,6 +40,20 @@ export const SHeader = styled.div`
     line-height: 20px;
     text-decoration: none;
     color: #f2f4fe;
+
+    @media only screen and (max-width: 800px) {
+      padding: 10.5px 10px;
+    }
+
+    @media only screen and (max-width: 680px) {
+      display: flex;
+      align-items: center;
+
+      padding: 5.5px 8px;
+      font-size: 10px;
+      max-width: 100px;
+      flex: 1;
+    }
 
     :hover {
       background: #c75af6;
@@ -65,6 +92,40 @@ export const SHeader = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .log-out-header {
+    padding: 12.5px 25px;
+    border: none;
+    background: #ad1fea;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Jost";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: none;
+    color: #f2f4fe;
+    display: none;
+
+    @media only screen and (max-width: 800px) {
+      padding: 10.5px 10px;
+    }
+
+    @media only screen and (max-width: 950px) {
+      display: grid;
+    }
+
+    @media only screen and (max-width: 680px) {
+      padding: 5.5px 8px;
+      font-size: 10px;
+      max-width: 100px;
+    }
+  }
+  .log-out-header:hover {
+    background: #c75af6;
+    border-radius: 10px;
   }
 
   .right-header span {

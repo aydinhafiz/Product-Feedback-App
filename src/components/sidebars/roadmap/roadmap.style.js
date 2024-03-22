@@ -4,43 +4,72 @@ export const SRoadmap = styled.div`
   background: #ffffff;
   border-radius: 10px;
   padding: 19px 24px 40px 24px;
+
+  @media only screen and (max-width: 950px) {
+    width: 223px;
+    height: 183px;
+  }
+
+  @media only screen and (max-width: 800px) {
+    max-height: 170px;
+    width: 180px;
+
+    padding: 15px 0px 0px 15px;
+  }
+
+  @media only screen and (max-width: 680px) {
+    max-height: 150px;
+    width: 150px;
+  }
   .nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 19px;
     padding-bottom: 24px;
+
+    @media only screen and (max-width: 680px) {
+      padding-bottom: 10px;
+    }
   }
 
   .nav-bar h2 {
     font-family: "Jost";
     font-style: normal;
+    color: #3a4374;
     font-weight: 700;
     font-size: 18px;
     line-height: 26px;
     letter-spacing: -0.25px;
-    color: #3a4374;
+
+    @media only screen and (max-width: 680px) {
+      font-size: 15px;
+    }
   }
 
   .roadmap-view {
     padding-right: 24px;
-    font-family: "Jost";
-    font-style: normal;
     font-weight: 600;
     font-size: 13px;
     line-height: 19px;
+
+    font-family: "Jost";
+    font-style: normal;
     text-decoration-line: underline;
     color: #4661e6;
     cursor: pointer;
     border: none;
     background: none;
+    @media only screen and (max-width: 680px) {
+      font-size: 10px;
+    }
   }
   .roadmap-view:hover {
-    font-family: "Jost";
-    font-style: normal;
     font-weight: 600;
     font-size: 13px;
     line-height: 19px;
+
+    font-family: "Jost";
+    font-style: normal;
     text-decoration-line: underline;
     color: #8397f8;
   }
@@ -119,5 +148,10 @@ export const SRoadmap = styled.div`
     color: #647196;
     margin-right: 24px;
     text-transform: capitalize;
+
+    @media only screen and (max-width: 680px) {
+      font-size: 13px;
+      margin-right: 20px;
+    }
   }
 `;

@@ -9,6 +9,7 @@ import axios from "axios";
 import arrowUp from "../../components/assets/shared/icon-arrow-up.svg";
 import comment from "../../components/assets/shared/icon-comments.svg";
 import whiteArrowUp from "../../components/assets/shared/white-arrow-up.png";
+import { useState } from "react";
 
 function Feedback(props) {
   const { getData } = useContext(FeedbackContext);
@@ -16,7 +17,7 @@ function Feedback(props) {
   const { upvotes, title, description, category, comments, id, upvotesUsers } =
     props;
 
-  console.log(id);
+  const [isLiked, setIsLiked] = useState(false);
 
   function commentsData() {
     let count = 0;
@@ -34,6 +35,8 @@ function Feedback(props) {
   const commentsCount = commentsData(props);
 
   async function getUpvote() {
+    setIsLiked(true);
+
     const config = {
       method: "GET",
       headers: {
@@ -48,13 +51,14 @@ function Feedback(props) {
       );
       if (data.data.status === "success") {
         getData();
+        setIsLiked(false);
       }
     } catch (error) {
       console.log(error);
+      setIsLiked(false);
     }
   }
 
-  console.log(upvotesUsers);
   return (
     <SFeedback>
       {/* <div
@@ -75,14 +79,13 @@ function Feedback(props) {
         <span>{upvotes}</span>
       </div> */}
 
-
-
       <UpvoteBox
         upvotesUsers={upvotesUsers}
         user={user}
         getUpvote={getUpvote}
         upvotes={upvotes}
         id={id}
+        isLiked={isLiked}
       />
 
       <div className="info-bar">
@@ -106,9 +109,11 @@ function Feedback(props) {
 
 export default Feedback;
 
-function UpvoteBox({ upvotesUsers, user, getUpvote, upvotes, id }) {
+function UpvoteBox({ upvotesUsers, user, getUpvote, upvotes, id, isLiked }) {
+  console.log(isLiked);
   return (
-    <div
+    <button
+      disabled={isLiked}
       className={
         upvotesUsers.includes(user.id)
           ? " likes-bar-upvote upvoted"
@@ -124,6 +129,6 @@ function UpvoteBox({ upvotesUsers, user, getUpvote, upvotes, id }) {
         <img src={arrowUp} alt="" />
       )}
       <span>{upvotes}</span>
-    </div>
+    </button>
   );
 }

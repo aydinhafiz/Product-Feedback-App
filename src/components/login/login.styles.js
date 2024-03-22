@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SLoginHeader = styled.form`
+export const SLoginContainer = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,27 +35,11 @@ export const SLoginHeader = styled.form`
     color: #3a4374;
   }
 
-  .login-email {
-    font-family: "Jost";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 22px;
-    color: #3a4374;
-
-    padding: 0px 227px 18px 16px;
-    max-width: 336px;
-    border: none;
-    background: none;
-    border-bottom: 1px solid #4661e6;
-    padding-bottom: 17px;
-    mix-blend-mode: normal;
+  .mb-24 {
     margin-bottom: 24px;
-    padding-right: 150px;
-    outline: none;
   }
 
-  .login-password {
+  .primary-input {
     font-family: "Jost";
     font-style: normal;
     font-weight: 400;
@@ -63,14 +47,14 @@ export const SLoginHeader = styled.form`
     line-height: 22px;
     color: #3a4374;
 
-    padding: 0px 227px 18px 16px;
-    max-width: 336px;
+    padding: 8px 18px 8px 18px;
+
+    width: 100%;
     border: none;
     background: none;
     border-bottom: 1px solid #4661e6;
-    padding-bottom: 10px;
     mix-blend-mode: normal;
-    padding-right: 150px;
+
     outline: none;
   }
 
