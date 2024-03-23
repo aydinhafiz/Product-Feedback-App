@@ -6,20 +6,24 @@ export const SCategories = styled.div`
   border-radius: 10px;
   margin-bottom: 24px;
 
-  padding: 24px;
+  padding: 45px 30px 40px;
 
   @media only screen and (max-width: 950px) {
     max-width: 223px;
+    padding: 24px;
   }
 
   @media only screen and (max-width: 800px) {
     max-height: 170px;
     width: 180px;
+    height: 165px;
+    padding: 24px;
   }
 
   @media only screen and (max-width: 680px) {
     max-height: 150px;
     width: 150px;
+    padding: 24px;
   }
 
   .logout-button {
@@ -53,6 +57,8 @@ export const SCategories = styled.div`
     padding-top: 24px; */
 
     padding: 5px 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
 
     font-weight: 600;
     font-size: 13px;
@@ -66,11 +72,20 @@ export const SCategories = styled.div`
     border: none;
     cursor: pointer;
 
+    @media only screen and (max-width: 950px) {
+    }
+
+    @media only screen and (max-width: 800px) {
+      margin-bottom: 10px;
+      margin-left: 7px;
+    }
+
     @media only screen and (max-width: 680px) {
       padding: 5px 10px;
       font-size: 10px;
-      margin-bottom: 10px;
-      margin-right: 2px;
+
+      margin-bottom: 5px;
+      margin-left: 2px;
     }
   }
 

@@ -65,7 +65,7 @@ const SFeedbackBoard = styled.div`
   border-radius: 10px;
 
   @media only screen and (max-width: 950px) {
-    max-height: 183px;
+    max-height: 165px;
     width: 223px;
   }
 

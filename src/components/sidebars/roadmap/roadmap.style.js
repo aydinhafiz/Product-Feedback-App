@@ -7,7 +7,7 @@ export const SRoadmap = styled.div`
 
   @media only screen and (max-width: 950px) {
     width: 223px;
-    height: 183px;
+    height: 165px;
   }
 
   @media only screen and (max-width: 800px) {
@@ -59,8 +59,18 @@ export const SRoadmap = styled.div`
     cursor: pointer;
     border: none;
     background: none;
+
+    @media only screen and (max-width: 800px) {
+      margin-right: 5px;
+    }
     @media only screen and (max-width: 680px) {
       font-size: 10px;
+    }
+  }
+
+  .roadmap-view-no-feedback {
+    @media only screen and (max-width: 800px) {
+      margin-right: 5px;
     }
   }
   .roadmap-view:hover {
