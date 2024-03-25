@@ -130,7 +130,14 @@ const SFeedbackBoard = styled.div`
   }
 
   .hum-img {
-    width: 50px;
+    display: none;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .hum-img {
+      width: 50px;
+      display: block;
+    }
   }
 `;
 

@@ -13,12 +13,6 @@ export const SHeader = styled.div`
   padding-bottom: 23px;
   padding-right: 24px;
 
-  @media only screen and (max-width: 950px) {
-  }
-
-  @media only screen and (max-width: 800px) {
-  }
-
   @media only screen and (max-width: 680px) {
     padding: 15px 20px;
   }
