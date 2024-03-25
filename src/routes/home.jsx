@@ -25,6 +25,9 @@ const SContainer = styled.div`
     flex-direction: column;
     align-items: center;
   }
+  @media only screen and (max-width: 600px) {
+    margin-top: 0;
+  }
 `;
 const Scontent = styled.div`
   flex: 1;
