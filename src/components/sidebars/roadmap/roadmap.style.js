@@ -21,6 +21,9 @@ export const SRoadmap = styled.div`
     max-height: 150px;
     width: 150px;
   }
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
   .nav-bar {
     display: flex;
     justify-content: space-between;

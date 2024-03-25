@@ -14,16 +14,17 @@ export const SHeader = styled.div`
   padding-right: 24px;
 
   @media only screen and (max-width: 950px) {
-    width: 750px;
   }
 
   @media only screen and (max-width: 800px) {
-    width: 650px;
   }
 
   @media only screen and (max-width: 680px) {
     padding: 15px 20px;
-    max-width: 600px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    border-radius: 0;
   }
 
   .add-feedback {
@@ -70,12 +71,18 @@ export const SHeader = styled.div`
     display: flex;
     align-items: center;
     margin-right: 38px;
+    @media only screen and (max-width: 600px) {
+      display: none;
+    }
   }
 
   .left-side img {
     padding-right: 16px;
 
     padding-left: 24px;
+    @media only screen and (max-width: 600px) {
+      display: none;
+    }
   }
 
   .suggestions {
@@ -121,6 +128,10 @@ export const SHeader = styled.div`
       padding: 5.5px 8px;
       font-size: 10px;
       max-width: 100px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      display: none;
     }
   }
   .log-out-header:hover {

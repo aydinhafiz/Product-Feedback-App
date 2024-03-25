@@ -18,6 +18,10 @@ const SSidebar = styled.div`
   @media only screen and (max-width: 800px) {
     gap: 30px;
   }
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    margin-bottom: 0;
+  }
 `;
 
 const SLogOutButton = styled.button`
@@ -85,6 +89,14 @@ const SFeedbackBoard = styled.div`
     padding: 80px 0px 0px 15px;
   }
 
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    padding: 50px 0px 30px 20px;
+    border-radius: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
   padding-top: 62px;
   padding-left: 24px;
   padding-bottom: 46px;
@@ -116,6 +128,10 @@ const SFeedbackBoard = styled.div`
       font-size: 13px;
     }
   }
+
+  .hum-img {
+    width: 50px;
+  }
 `;
 
 function Sidebar() {
@@ -123,8 +139,14 @@ function Sidebar() {
   return (
     <SSidebar>
       <SFeedbackBoard>
-        <h2>Frontend Mentor</h2>
-        <span>Feedback Board</span>
+        <div className="feedback-board__leftside">
+          <h2>Frontend Mentor</h2>
+          <span>Feedback Board</span>
+        </div>
+
+        <div className="hum-box">
+          <img src="/assets/shared/hum-button.png" alt="" className="hum-img" />
+        </div>
       </SFeedbackBoard>
       <Buttons />
       <Roadmap />

@@ -32,6 +32,7 @@ const Scontent = styled.div`
   @media only screen and (max-width: 950px) {
     margin-left: 0;
   }
+  width: 100%;
 `;
 
 function Home() {

@@ -26,6 +26,10 @@ export const SCategories = styled.div`
     padding: 24px;
   }
 
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+
   .logout-button {
     margin-top: 30px;
     padding: 12.5px 25px;
