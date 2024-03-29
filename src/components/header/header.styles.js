@@ -17,6 +17,7 @@ export const SHeader = styled.div`
     padding: 15px 20px;
   }
 
+  
   @media only screen and (max-width: 600px) {
     border-radius: 0;
   }
