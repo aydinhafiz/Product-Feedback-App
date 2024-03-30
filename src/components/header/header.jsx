@@ -24,6 +24,7 @@ function Header() {
         <SortSelect />
       </div>
 
+
       <div className="right-header">
         <button className="log-out-header" onClick={handleLogoutState}>
           Log Out
