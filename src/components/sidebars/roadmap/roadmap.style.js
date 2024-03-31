@@ -72,11 +72,28 @@ export const SRoadmap = styled.div`
   }
 
   .roadmap-view-no-feedback {
+    padding-right: 24px;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+
+    font-family: "Jost";
+    font-style: normal;
+    text-decoration-line: underline;
+    color: #4661e6;
+    cursor: pointer;
+    border: none;
+    background: none;
+
+    @media only screen and (max-width: 680px) {
+      font-size: 10px;
+    }
+
     @media only screen and (max-width: 800px) {
       margin-right: 5px;
     }
   }
-  .roadmap-view:hover {
+  .roadmap-view-no-feedback:hover {
     font-weight: 600;
     font-size: 13px;
     line-height: 19px;

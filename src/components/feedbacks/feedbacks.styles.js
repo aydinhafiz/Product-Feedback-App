@@ -133,7 +133,7 @@ export const SFeedback = styled.div`
     border-radius: 10px;
     cursor: pointer;
     min-width: 40px;
-
+    border: none;
     :hover {
       color: #3a4374;
       background: #cfd7ff;
@@ -175,7 +175,7 @@ export const SFeedback = styled.div`
 
     border-radius: 10px;
     background: #4661e6;
-
+    border: none;
     :hover {
       color: #3a4374;
       background: #cfd7ff;
