@@ -49,6 +49,7 @@ export const SCustomSelect = styled.div`
     color: #647196;
     margin-bottom: 16px;
   }
+  cursor: pointer;
 `;
 
 export const SSelectItemsBox = styled.div`

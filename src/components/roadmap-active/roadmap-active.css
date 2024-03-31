@@ -10,6 +10,7 @@
   justify-content: space-between;
   width: 1110px;
   margin-top: 78px;
+  margin-bottom: 50px;
   padding: 23px 32px 27px 23px;
 
   border-radius: 10px;
@@ -90,6 +91,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-bottom: 20px;
 }
 
 .box-color {

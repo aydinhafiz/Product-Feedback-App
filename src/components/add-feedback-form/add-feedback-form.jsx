@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import {
   SAddFeedbackDetail,
   SAddFeedbackButton,
@@ -23,10 +23,11 @@ function AddFeedbackForm() {
       title: "",
       category: "Feature",
       description: "",
-    },  
+    },
   });
 
   const [category, setCategory] = useState("Feature");
+  const nameInputRef = useRef(null);
 
   const [inputFeedbackTitle, setInputFeedbackTitle] = useState("");
   const [feedbackDetail, setFeedbackDetail] = useState("");
@@ -58,6 +59,12 @@ function AddFeedbackForm() {
     }
   }
 
+  useEffect(() => {
+    if (nameInputRef.current) {
+      nameInputRef.current.focus();
+    }
+  });
+
   return (
     <SContentNewFeedback onSubmit={handleSubmit(addFeedback)}>
       <img className="group-image" src={group} alt="" />
@@ -69,6 +76,7 @@ function AddFeedbackForm() {
           name="title"
           className="feedback-title-input"
           type="text"
+          ref={nameInputRef}
           {...register("title")}
         />
       </SWriteFeedbackTitle>

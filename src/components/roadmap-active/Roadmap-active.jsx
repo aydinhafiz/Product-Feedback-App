@@ -1,5 +1,6 @@
 import React from "react";
 import "./roadmap-active.css";
+import { Link } from "react-router-dom";
 ////////////IMAGES/////////////////////////////////////////////////
 import leftArrow from "../assets/shared/icon-arrow-left.svg";
 import upArrow from "../assets/shared/icon-arrow-up.svg";
@@ -24,9 +25,11 @@ function RoadmapActive() {
         </div>
 
         <div className="right-side">
-          <button className="add-feedback-button">
-            <img src={iconPlus} alt="plus" /> Add Feedback
-          </button>
+          <Link to="/new">
+            <button className="add-feedback-button">
+              <img src={iconPlus} alt="plus" /> Add Feedback
+            </button>
+          </Link>
         </div>
       </div>
 
