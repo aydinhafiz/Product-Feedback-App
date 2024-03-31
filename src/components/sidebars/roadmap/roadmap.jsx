@@ -1,8 +1,9 @@
 import RoadmapItem from "./roadmap-item";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { FeedbackContext } from "../../../contexts/feedback-context";
 import { SRoadmap } from "./roadmap.style";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Roadmap() {
   const { productRequests } = useContext(FeedbackContext);
@@ -20,28 +21,28 @@ function Roadmap() {
   }, {});
   // "roadmap-view"
 
-  // useEffect(() => {
-  //   async function getData() {
-  //     let response;
-  //     const config = {
-  //       method: "GET",
-  //       headers: {
-  //         Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODc3Yzg3M2ZlNjY2Y2E0ZTFjOTUwNyIsImlhdCI6MTY4NjY4MjIwMSwiZXhwIjoxNjk0NDU4MjAxfQ.i1aSRJVpc0FD-z3o_hVmwE0XrqK7zPWTEDwOwJd58T0`,
-  //         "Content-Type": `application/json`,
-  //       },
-  //     };
-  //     try {
-  //       response = await axios.get(
-  //         "https://tutorial-apis.herokuapp.com/api/v1/feedbacks",
-  //         config
-  //       );
-  //       console.log(response);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-  //   getData();
-  // }, []);
+  useEffect(() => {
+    let response;
+    async function getData() {
+      const config = {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ODc3Yzg3M2ZlNjY2Y2E0ZTFjOTUwNyIsImlhdCI6MTY4NjY4MjIwMSwiZXhwIjoxNjk0NDU4MjAxfQ.i1aSRJVpc0FD-z3o_hVmwE0XrqK7zPWTEDwOwJd58T0`,
+          "Content-Type": `application/json`,
+        },
+      };
+      try {
+        response = await axios.get(
+          "https://tutorial-apis.herokuapp.com/api/v1/feedbacks",
+          config
+        );
+        console.log(response);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getData();
+  }, []);
 
   return (
     <SRoadmap>
