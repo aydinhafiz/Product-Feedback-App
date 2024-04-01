@@ -20,7 +20,7 @@ function CustomSelect({
   handleChange,
   control,
   name,
-}) {  
+}) {
   const [isOptionsBoxOpen, setIsOptionsBoxOpen] = useState(false);
 
   function handleOptionItemClick(option) {
@@ -73,5 +73,6 @@ function CustomSelect({
     </OutsideClickHandler>
   );
 }
+
 
 export default CustomSelect;
