@@ -14,6 +14,7 @@ import CustomSelect from "../../shared/custom-select";
 import { useForm } from "react-hook-form";
 ///////////////////// IMAGES////////////////////////////////////////////
 import group from "../../components/assets/user-images/group4.png";
+import SharedInput from "../../shared/shared-input";
 
 function AddFeedbackForm() {
   const { token, user } = useContext(AuthContext);
@@ -53,23 +54,24 @@ function AddFeedbackForm() {
         },
         config
       );
+      console.log(data);
       return data;
     } catch (error) {
       console.log(error);
     }
   }
 
-  useEffect(() => {
-    if (nameInputRef.current) {
-      nameInputRef.current.focus();
-    }
-  });
+  // useEffect(() => {
+  //   if (nameInputRef.current) {
+  //     nameInputRef.current.focus();
+  //   }
+  // });
 
   return (
     <SContentNewFeedback onSubmit={handleSubmit(addFeedback)}>
       <img className="group-image" src={group} alt="" />
       <SNewFeedbackTitle>Create New Feedback</SNewFeedbackTitle>
-      <SWriteFeedbackTitle>
+      {/* <SWriteFeedbackTitle>
         <span>Feedback Title</span>
         <p>Add a short, descriptive headline</p>
         <input
@@ -79,7 +81,14 @@ function AddFeedbackForm() {
           ref={nameInputRef}
           {...register("title")}
         />
-      </SWriteFeedbackTitle>
+      </SWriteFeedbackTitle> */}
+
+      <SharedInput
+        control={control}
+        name="title"
+        label="Feedback Title"
+        description="Add a short, descriptrive headline"
+      />
 
       <CustomSelect
         // value={category}
@@ -91,21 +100,15 @@ function AddFeedbackForm() {
         options={categoryOptions}
       />
 
-      <SAddFeedbackDetail>
-        <span>Feedback Detail</span>
-        <p>
-          Include any specific comments on what should be improved, added, etc.
-        </p>
-        <textarea
-          {...register("detail")}
-          className="feedback-detail-textarea"
-          type="text"
-          name="detail"
-          id=""
-          cols=""
-          rows=""
-        ></textarea>
-      </SAddFeedbackDetail>
+      <SharedInput
+        control={control}
+        isMultiple={true}
+        rows={3}
+        name="description"
+        description="Include any specific comments on what should be improved, added, etc."
+        label="Feedback Detail"
+      />
+
       <SCancelOrAddFeedback>
         <SCancelButton>Cancel</SCancelButton>
         <SAddFeedbackButton>Add Feedback</SAddFeedbackButton>

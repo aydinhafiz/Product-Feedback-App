@@ -62,6 +62,24 @@ export const SWriteFeedbackTitle = styled.div`
 
     padding: 13px 0px 13px 24px;
   }
+
+  .feedback-detail-textarea {
+    color: #8c92b3;
+    font-family: "Jost";
+    font-size: 15px;
+    font-weight: 400;
+
+    width: 456px;
+
+    outline: none;
+    resize: none;
+    border: none;
+
+    padding: 16px 23px;
+
+    border-radius: 5px;
+    background: #f7f8fd;
+  }
 `;
 
 export const SAddFeedbackDetail = styled.div`
@@ -102,12 +120,12 @@ export const SAddFeedbackDetail = styled.div`
     font-weight: 400;
 
     width: 456px;
-    height: 96px;
+
     outline: none;
     resize: none;
     border: none;
 
-    padding: 16px 0px 58px 23px;
+    padding: 16px 23px;
 
     border-radius: 5px;
     background: #f7f8fd;
