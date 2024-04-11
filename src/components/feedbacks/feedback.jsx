@@ -82,26 +82,30 @@ function Feedback(props) {
         <span>{upvotes}</span>
       </div> */}
 
-      <UpvoteBox
-        upvotesUsers={upvotesUsers}
-        user={user}
-        getUpvote={getUpvote}
-        upvotes={upvotes}
-        id={id}
-        isLiked={isLiked}
-        mutate={mutate}
-        isLoading={isLoading}
-      />
+      <div className="upvote-info-box">
+        <UpvoteBox
+          upvotesUsers={upvotesUsers}
+          user={user}
+          getUpvote={getUpvote}
+          upvotes={upvotes}
+          id={id}
+          isLiked={isLiked}
+          mutate={mutate}
+          isLoading={isLoading}
+        />
 
-      <div className="info-bar">
-        <div className="title">
-          <Link to={`/feedbacks/${id}`}>
-            <h2>{title}</h2>
-          </Link>
+        <div className="info-bar"> 
+          <div className="title">
+            <Link to={`/feedbacks/${id}`}>
+              <h2>{title}</h2>
+            </Link>
+          </div>
+          <p>{description}</p>
+          <button>{category}</button>
         </div>
-        <p>{description}</p>
-        <button>{category}</button>
       </div>
+
+
       <div className="comments-bar">
         <img src={comment} alt="" />
         <SCommentsCount isZero={commentsCount === 0}>

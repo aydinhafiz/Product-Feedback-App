@@ -36,6 +36,9 @@ export const SFeedback = styled.div`
     padding: 15px 20px;
     max-width: 600px;
   }
+
+  @media only screen and (max-width: 375px) {
+  }
   /* margin-left: 30px; */
   flex: 1;
   max-width: 825px;
@@ -55,6 +58,10 @@ export const SFeedback = styled.div`
 
     @media only screen and (max-width: 680px) {
       font-size: 16px;
+    }
+
+    @media only screen and (max-width: 375px) {
+      margin-bottom: 10px;
     }
   }
 
@@ -80,6 +87,10 @@ export const SFeedback = styled.div`
     @media only screen and (max-width: 680px) {
       font-size: 14px;
       margin-bottom: 8px;
+    }
+
+    @media only screen and (max-width: 375px) {
+      margin-bottom: 10px;
     }
   }
 
@@ -155,6 +166,13 @@ export const SFeedback = styled.div`
       letter-spacing: -0.180556px;
       color: #3a4374;
     }
+
+    @media only screen and (max-width: 375px) {
+      padding: 5px 30px;
+      margin-right: 0;
+      width: 100px;
+      margin-bottom: 10px;
+    }
   }
 
   .upvoted {
@@ -199,6 +217,13 @@ export const SFeedback = styled.div`
       line-height: normal;
       letter-spacing: -0.181px;
     }
+
+    @media only screen and (max-width: 375px) {
+      padding: 5px 30px;
+      margin-right: 0;
+      width: 100px;
+      margin-bottom: 10px;
+    }
   }
 
   a {
@@ -207,6 +232,9 @@ export const SFeedback = styled.div`
 
   .title {
     margin-top: 0px;
+
+    @media only screen and (max-width: 375px) {
+    }
   }
 `;
 
