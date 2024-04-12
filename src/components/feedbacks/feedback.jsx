@@ -105,7 +105,6 @@ function Feedback(props) {
         </div>
       </div>
 
-
       <div className="comments-bar">
         <img src={comment} alt="" />
         <SCommentsCount isZero={commentsCount === 0}>
