@@ -14,6 +14,7 @@ const SInput = styled.input`
   background: none;
   border-bottom: 1px solid #4661e6;
   padding-bottom: 17px;
+  margin-bottom: 17px;
   mix-blend-mode: normal;
 
   outline: none;
