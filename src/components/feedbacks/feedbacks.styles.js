@@ -94,7 +94,7 @@ export const SFeedback = styled.div`
     }
   }
 
-  .info-bar button {
+  .btn-category {
     border: none;
     font-family: "Jost";
     font-style: normal;
