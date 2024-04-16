@@ -82,7 +82,7 @@ function Feedback(props) {
         <span>{upvotes}</span>
       </div> */}
 
-      <div className="upvote-info-box">
+      {/* <div className="upvote-info-box"> */}
       <UpvoteBox
         upvotesUsers={upvotesUsers}
         user={user}
@@ -101,9 +101,8 @@ function Feedback(props) {
         </div>
         <p>{description}</p>
         <button className="btn-category">{category}</button>
+      {/* </div> */}
       </div>
-      </div>
-
       <div className="comments-bar">
         <img src={comment} alt="" />
         <SCommentsCount isZero={commentsCount === 0}>

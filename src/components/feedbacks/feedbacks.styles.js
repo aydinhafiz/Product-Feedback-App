@@ -22,8 +22,8 @@ export const SFeedback = styled.div`
   display: flex;
   flex: 1;
   width: 100%;
-  justify-content: space-between;
   align-items: center;
+  justify-content:space-between;
   margin-bottom: 20px;
   background: #ffffff;
   border-radius: 10px;
@@ -60,9 +60,9 @@ export const SFeedback = styled.div`
       font-size: 16px;
     }
 
-    @media only screen and (max-width: 375px) {
+    /* @media only screen and (max-width: 375px) {
       margin-bottom: 10px;
-    }
+    } */
   }
 
   .title :hover {
@@ -89,9 +89,9 @@ export const SFeedback = styled.div`
       margin-bottom: 8px;
     }
 
-    @media only screen and (max-width: 375px) {
+    /* @media only screen and (max-width: 375px) {
       margin-bottom: 10px;
-    }
+    } */
   }
 
   .btn-category {
@@ -167,12 +167,12 @@ export const SFeedback = styled.div`
       color: #3a4374;
     }
 
-    @media only screen and (max-width: 375px) {
+    /* @media only screen and (max-width: 375px) {
       padding: 5px 30px;
       margin-right: 0;
       width: 100px;
       margin-bottom: 10px;
-    }
+    } */
   }
 
   .upvoted {
@@ -217,13 +217,13 @@ export const SFeedback = styled.div`
       line-height: normal;
       letter-spacing: -0.181px;
     }
-
+/* 
     @media only screen and (max-width: 375px) {
       padding: 5px 30px;
       margin-right: 0;
       width: 100px;
       margin-bottom: 10px;
-    }
+    } */
   }
 
   a {

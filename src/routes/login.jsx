@@ -77,7 +77,6 @@ function Login() {
         </h3>
       </div>
     </SLoginContainer>
-    
   );
 }
 
