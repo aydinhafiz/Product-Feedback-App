@@ -93,6 +93,7 @@ function Feedback(props) {
         mutate={mutate}
         isLoading={isLoading}
       />
+      
       <div className="info-bar">
         <div className="title">
           <Link to={`/feedbacks/${id}`}>
