@@ -44,7 +44,6 @@ function Login() {
       setLoading(false);
     }
   }
-
   return (
     <SLoginContainer onSubmit={handleSubmit(login)}>
       <div className="login-page">
