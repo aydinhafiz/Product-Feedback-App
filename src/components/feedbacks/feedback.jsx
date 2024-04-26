@@ -112,6 +112,7 @@ function Feedback(props) {
       </div>
     </SFeedback>
   );
+  
 }
 
 export default Feedback;
