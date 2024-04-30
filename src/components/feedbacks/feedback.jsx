@@ -148,5 +148,6 @@ function UpvoteBox({
       )}
       <span>{upvotes}</span>
     </button>
+    
   );
 }
