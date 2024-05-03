@@ -147,7 +147,7 @@ function UpvoteBox({
         <img src={arrowUp} alt="" />
       )}
       <span>{upvotes}</span>
-      
+      <img src="" alt="" />
     </button>
   );
 }
