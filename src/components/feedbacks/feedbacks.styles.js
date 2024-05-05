@@ -23,7 +23,7 @@ export const SFeedback = styled.div`
   flex: 1;
   width: 100%;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
   margin-bottom: 20px;
   background: #ffffff;
   border-radius: 10px;
@@ -217,7 +217,7 @@ export const SFeedback = styled.div`
       line-height: normal;
       letter-spacing: -0.181px;
     }
-/* 
+    /* 
     @media only screen and (max-width: 375px) {
       padding: 5px 30px;
       margin-right: 0;
