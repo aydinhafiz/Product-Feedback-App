@@ -149,6 +149,5 @@ function UpvoteBox({
       <span>{upvotes}</span>
       <img src="" alt="" />
     </button>
-    
   );
 }
