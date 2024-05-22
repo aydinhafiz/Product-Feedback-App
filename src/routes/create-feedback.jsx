@@ -14,7 +14,6 @@ function NewFeedback() {
       <AddFeedbackFormHeader />
       <AddFeedbackForm />
     </SCreateNewFeedback>
-    
   );
 }
 export default NewFeedback;
