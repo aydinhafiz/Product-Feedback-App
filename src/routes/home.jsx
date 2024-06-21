@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import "../App.css";
 
-
 import Header from "../components/header/header";
 import Sidebar from "../components/sidebars/sidebar";
 import FeedbackList from "../components/feedbacklist";
