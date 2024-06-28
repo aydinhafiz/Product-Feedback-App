@@ -53,6 +53,7 @@ function Home() {
 
   console.log(data);
 
+  
   return (
     <SContainer>
       <Sidebar />
