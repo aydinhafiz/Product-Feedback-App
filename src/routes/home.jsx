@@ -13,7 +13,6 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import { getAll } from "../components/services";
 
-
 const SContainer = styled.div`
   display: flex;
   /* justify-content: center; */
