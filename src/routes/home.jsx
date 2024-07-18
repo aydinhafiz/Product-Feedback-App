@@ -38,6 +38,7 @@ const Scontent = styled.div`
   width: 100%;
 `;
 
+
 function Home() {
   const authObjString = localStorage.getItem("authObj");
   let authObj;
